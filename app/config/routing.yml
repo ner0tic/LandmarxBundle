@@ -1,4 +1,34 @@
-# Internal routing configuration to handle ESI
-#_internal:
-#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
-#    prefix:   /_internal
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+user_security:
+    resource: "@LandmarxUserBundle/Resources/config/routing/security.yml"
+user_signup:
+    resource: "@LandmarxUserBundle/Resources/config/routing/signup.yml"
+    prefix: /signup
+
+################################################################################
+# retaining OG routes but are now managed in seperate files listed above       #
+################################################################################
+#fos_user_security:
+#    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+# 
+#fos_user_profile:
+#    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+#    prefix: /profile
+#
+#fos_user_register:
+#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+#    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+    
+homepage:
+    pattern: /
+    defaults: { _controller: LandmarxUserBundle:User:index }

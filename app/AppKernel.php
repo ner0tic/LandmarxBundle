@@ -14,11 +14,31 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            
+            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            
+            new Elao\WebProfilerExtraBundle\WebProfilerExtraBundle(),
+            
+            new FOS\UserBundle\FOSUserBundle(),
+            new FOS\FacebookBundle\FOSFacebookBundle(),
+           
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
+            new Oh\GoogleMapFormTypeBundle\OhGoogleMapFormTypeBundle(),
+            
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),            
+            
+            new Landmarx\LandmarkBundle\LandmarxLandmarkBundle(),
+            new Landmarx\UserBundle\LandmarxUserBundle(),
+            new Landmarx\LandmarkCollectionBundle\LandmarxLandmarkCollectionBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
