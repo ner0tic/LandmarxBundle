@@ -3,16 +3,16 @@
 
   use Doctrine\ORM\EntityRepository;
 
-  class LandmarkDetailRepository extends EntityRepository {
+  class LandmarkCategoryRepository extends EntityRepository {
     /**
      * 
-     * @param \Landmarx\LandmarkBundle\Repository\LandmarkDetail $landmark
+     * @param \Landmarx\LandmarkBundle\Repository\LandmarkCategory $landmark
      * @return array
      * @throws \InvalidArgumentException
      */
     public function filterByLandmark($landmark) {
-      if(!$landmark instanceof Landmarx\LandmarkBundle\Entity\LandmarkDetail) // object
-        throw new \InvalidArgumentException('argument must be of type LandmarkDetail');
+      if(!$landmark instanceof Landmarx\LandmarkBundle\Entity\LandmarkCategory) // object
+        throw new \InvalidArgumentException('argument must be of type LandmarkCategory');
       $query = 'SELECT l FROM LandmarxLandmarkBundle:Landmark l where l.landmark_id = :id';      
       
       return $this->getEntityManager()->createQuery($query)->setParameter('id', $landmark->getId())->getResult();

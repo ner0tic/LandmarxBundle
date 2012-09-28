@@ -1,8 +1,8 @@
 <?php
+  namespace Landmarx\LandmarkBundle\Repository;
 
-namespace Landmarx\LandmarkBundle\Repository;
+  use Doctrine\ORM\EntityRepository;
 
-use Doctrine\ORM\EntityRepository;
-
-class LandmarkRepository extends EntityRepository {
-}
+  class LandmarkRepository extends EntityRepository {
+    
+  }

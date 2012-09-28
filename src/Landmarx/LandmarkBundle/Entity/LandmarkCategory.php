@@ -6,10 +6,10 @@
   use Doctrine\Common\Collections\ArrayCollection;
   
   /**
-   * @ORM\Entity(repositoryClass="Landmarx\LandmarkBundle\Repository\LandmarkRepository")
-   * @ORM\Table(name="landmark")
+   * @ORM\Entity(repositoryClass="Landmarx\LandmarkBundle\Repository\LandmarkCategoryRepository")
+   * @ORM\Table(name="landmark_category")
    */
-  class Landmark {
+  class LandmarkCategory {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -25,13 +25,6 @@
     protected $name;
     
     /**
-     * @var string $description
-     * 
-     * ORM\Column(type="text", name="name")
-     */
-    protected $description;    
-    
-    /**
      * @var Landmarx\LandmarkBundle\Entity\Landmark 
      * 
      * @ORM\ManyToOne(targetEntity="landmark", inversedBy="landmark")
@@ -40,19 +33,18 @@
     protected $parent = null;
     
     /**
-     * @var array $categories
+     * @var array $landmarks
      * 
-     * @ORM\OneToMany(targetEntity="LandmarkCategory", mappedBy="landmark")
+     * @ORM\OneToMany(targetEntity="Landmark", mappedBy="landmark_category")
      */    
-    protected $categories;
+    protected $landmarks;
   
     /**
-     * @var Landmarx\LandmarkBundle\Entity\LandmarkCategory $primary_category
+     * @var string $description
      * 
-     * @ORM\ManyToOne(targetEntity="landmark_category", inversedBy="landmark")
-     * @ORM\JoinColumn(name="primary_category_id", referencedColumnName="id")
+     * ORM\Column(type="text", name="name")
      */
-    protected $primary_category;
+    protected $description;
     
     /**
      * @var datetime $created
@@ -78,7 +70,7 @@
      */
     protected $slug;  
     
-    public function __construct() { $this->categories = new ArrayCollection(); }
+    public function __construct() { $this->landmarks = new ArrayCollection(); }
   
     /**
      * Get id
@@ -91,7 +83,7 @@
      * Set name
      *
      * @param string $name
-     * @return Landmark
+     * @return Category
      */
     public function setName($name) {
         $this->name = $name;
@@ -109,7 +101,7 @@
      * Set created
      *
      * @param datetime $created
-     * @return Landmark
+     * @return Category
      */
     public function setCreated($created) {
         $this->created = $created;
@@ -127,7 +119,7 @@
      * Set updated
      *
      * @param datetime $updated
-     * @return Landmark
+     * @return Category
      */
     public function setUpdated($updated) {
         $this->updated = $updated;
@@ -145,7 +137,7 @@
      * Set slug
      *
      * @param string $slug
-     * @return Landmark
+     * @return Category
      */
     public function setSlug($slug) {
         $this->slug = $slug;
@@ -162,10 +154,10 @@
     /**
      * Set parent
      *
-     * @param Landmarx\LandmarkBundle\Entity\Landmark$parent
-     * @return Landmark
+     * @param Landmarx\LandmarkBundle\Entity\Landmark $parent
+     * @return Category
      */
-    public function setParent(\Landmarx\LandmarkBundle\Entity\Landmark$parent = null) {
+    public function setParent(\Landmarx\LandmarkBundle\Entity\Landmark $parent = null) {
         $this->parent = $parent;
         return $this;
     }
@@ -178,45 +170,27 @@
     public function getParent() { return $this->parent; }
 
     /**
-     * Add category
+     * Add landmarks
      *
-     * @param Landmarx\LandmarkBundle\Entity\LandmarkCategory $categories
-     * @return Landmark
+     * @param Landmarx\LandmarkBundle\Entity\Landmark $landmarks
+     * @return Category
      */
-    public function addCategory(\Landmarx\LandmarkBundle\Entity\LandmarkCategory $category) {
-        $this->categories[] = $category;
+    public function addLandmark(\Landmarx\LandmarkBundle\Entity\Landmark $landmarks) {
+        $this->landmarks[] = $landmarks;
         return $this;
     }
 
     /**
-     * Remove category
+     * Remove landmarks
      *
-     * @param Landmarx\LandmarkBundle\Entity\LandmarkCategory $categories
+     * @param Landmarx\LandmarkBundle\Entity\Landmark $landmarks
      */
-    public function removeCategory(\Landmarx\LandmarkBundle\Entity\LandmarkCategory $category) { $this->categories->removeElement($category); }
+    public function removeLandmark(\Landmarx\LandmarkBundle\Entity\Landmark $landmarks) { $this->landmarks->removeElement($landmarks); }
 
     /**
-     * Get categories
+     * Get landmarks
      *
      * @return Doctrine\Common\Collections\Collection 
      */
-    public function getCategories() { return $this->categories; }
-
-    /**
-     * Set primary_category
-     *
-     * @param Landmarx\LandmarkBundle\Entity\LandmarkCategory $primaryCategory
-     * @return Landmark
-     */
-    public function setPrimaryCategory(\Landmarx\LandmarkBundle\Entity\LandmarkCategory $primaryCategory = null) {
-        $this->primary_category = $primaryCategory;
-        return $this;
-    }
-
-    /**
-     * Get primary_category
-     *
-     * @return Landmarx\LandmarkBundle\Entity\LandmarkCategory
-     */
-    public function getPrimaryCategory() { return $this->primary_category; }
-  }
+    public function getLandmarks(){ return $this->landmarks; }
+}

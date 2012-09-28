@@ -1,4 +1,4 @@
-<?php
+<?php 
   namespace Landmarx\UserBundle\Entity;
 
   use FOS\UserBundle\Entity\User as BaseUser;
