@@ -6,7 +6,16 @@ user_security:
 user_signup:
     resource: "@LandmarxUserBundle/Resources/config/routing/signup.yml"
     prefix: /signup
-
+landmark:
+    resource: "@LandmarxLandmarkBundle/Resources/config/routing/landmark.yml"
+    prefix: /
+category:
+    resource: "@LandmarxLandmarkBundle/Resources/config/routing/landmark_category.yml"
+    prefix: /
+details:
+    resource: "@LandmarxLandmarkBundle/Resources/config/routing/landmark_details.yml"
+    prefix: /
+    
 ################################################################################
 # retaining OG routes but are now managed in seperate files listed above       #
 ################################################################################
@@ -32,3 +41,4 @@ fos_user_change_password:
 homepage:
     pattern: /
     defaults: { _controller: LandmarxUserBundle:User:index }
+    

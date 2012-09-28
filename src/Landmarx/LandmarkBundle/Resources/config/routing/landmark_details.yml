@@ -1,0 +1,12 @@
+details:
+    pattern: /landmarks/details
+    defaults: { _controller: LandmarxLandmarkBundle:LandmarkDetails:index }
+details_show:
+    pattern: /landmarks/details/{slug}
+    defaults: { _controller: LandmarxLandmarkBundle:LandmarkDetails:show }
+details_add:
+    pattern: /landmarks/details/add
+    defaults: { _controller: LandmarxLandmarkBundle:LandmarkDetails:new }
+details_edit:
+    pattern: /landmarks/details/{slug}/edit
+    defaults: { _controller: LandmarxLandmarkBundle:LandmarkDetails:edit }
