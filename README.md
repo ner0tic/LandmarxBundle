@@ -3,10 +3,10 @@ jQuery Plus Bundle for Symfony 2.1
 
 ## Current Version
 
-jQuery 1.8.2
-JQuery-ui 1.8.23
-Select2 3.2
-GMaps 1.0
+- jQuery 1.8.2
+- JQuery-ui 1.8.23
+- Select2 3.2
+- GMaps 1.0
 
 ## Installation
 
