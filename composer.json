@@ -1,0 +1,23 @@
+{
+    "name": "ner0tic/jquery-plus-bundle",
+    "type": "symfony-bundle",
+    "description": "Bundle for Symfony2 containing often used jquery plugins",
+    "keywords": ["jquery", "javascript", "jquery-ui"],
+    "homepage": "http://jquery.com/",
+    "license": ["MIT", "GPLv2"],
+    "authors": [
+        {
+            "name": "David Durost",
+            "email": "david.durost@gmail.com",
+            "homepage": "http://daviddurost.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": { "Ner0tic\\JQueryPlusBundle": "" }
+    },
+    "target-dir": "Ner0tic/JQueryPlusBundle"
+}
