@@ -1,5 +1,30 @@
 {
+    "repositories": [
+      {
+        "type": "package",
+        "package": {
+          "name": "jquery",
+          "version": "1.8.2",
+          "source": {
+            "url": "git://github.com/jquery/jquery.git",
+            "type": "git"
+          }            
+        }
+      },
+      {
+        "type": "package",
+        "package": {
+          "name": "jquery-ui",
+          "version": "1.8.2",
+          "source": {
+            "url": "git://github.com/jquery/jquery-ui.git",
+            "type": "git"
+          }
+        }
+      }
+    ],
     "require": {
+        "jquery":                                                 ">=1.8.2",
         "php":                                                    ">=5.3.2",
         "doctrine/doctrine-bundle":                               "dev-master",
         "symfony/symfony":                                        "2.1.*",
@@ -26,6 +51,7 @@
 
         "doctrine/data-fixtures":                                 "dev-master",
         "doctrine/doctrine-fixtures-bundle":                      "dev-master",
+        "gedmo/doctrine-extensions":                              "2.3.x-dev",
         "stof/doctrine-extensions-bundle":                        "dev-master",
 
         "friendsofsymfony/user-bundle":                           "dev-master",

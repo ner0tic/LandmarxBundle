@@ -41,4 +41,6 @@ fos_user_change_password:
 homepage:
     pattern: /
     defaults: { _controller: LandmarxUserBundle:User:index }
-    
+account_settings:
+    pattern: /my-account
+    defaults: { _controller: LandmarxUserBundle:User:settings }
