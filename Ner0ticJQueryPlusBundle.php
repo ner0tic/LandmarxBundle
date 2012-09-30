@@ -3,6 +3,6 @@
 
   use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-  class Ner0ticJQueryBundle extends Bundle {
+  class Ner0ticJQueryPlusBundle extends Bundle {
 
   }
