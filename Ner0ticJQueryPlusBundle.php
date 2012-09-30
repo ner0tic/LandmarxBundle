@@ -1,5 +1,5 @@
 <?php
-  namespace Ner0tic\JQueryBundle;
+  namespace Ner0tic\JQueryPlusBundle;
 
   use Symfony\Component\HttpKernel\Bundle\Bundle;
 
