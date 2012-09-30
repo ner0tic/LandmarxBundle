@@ -18,7 +18,7 @@ jQuery Plus Bundle for Symfony 2.1
 {
     "require": {
 		// ...
-        "ner0tic/jquery-plus-bundle": "1.0.0"
+        "ner0tic/jquery-plus-bundle": "*"
     }
 }
 ```
