@@ -39,6 +39,8 @@ class AppKernel extends Kernel
             new Landmarx\LandmarkBundle\LandmarxLandmarkBundle(),
             new Landmarx\UserBundle\LandmarxUserBundle(),
             new Landmarx\LandmarkCollectionBundle\LandmarxLandmarkCollectionBundle(),
+            
+            new Ner0tic\JQueryPlusBundle\Ner0ticJQueryPlusBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

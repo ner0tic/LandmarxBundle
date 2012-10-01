@@ -49,7 +49,7 @@
     /**
      * @var Landmarx\LandmarkBundle\Entity\LandmarkCategory $primary_category
      * 
-     * @ORM\ManyToOne(targetEntity="landmark_category", inversedBy="landmark")
+     * @ORM\ManyToOne(targetEntity="landmarkCategory", inversedBy="landmark")
      * @ORM\JoinColumn(name="primary_category_id", referencedColumnName="id")
      */
     protected $primary_category;

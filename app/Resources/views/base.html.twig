@@ -13,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="en" />
     <link rel="alternate" type="application/rss+xml" href="/feed/" title="RSS" />
-    <title>{% block title %}[SCSS]Summer Camp Scheduling System{% endblock %}</title>
+    <title>{% block title %}Landmarx :: If you build it, they will come.{% endblock %}</title>
     <meta name="description" content="summer camp scheduling system">
     <meta name="author" content="david durost">
 <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -24,7 +24,7 @@
 <!-- CSS : implied media="all" -->
     {% stylesheets '@LandmarxUserBundle/Resources/public/css/base/*' %}
       <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheet %}
+    {% endstylesheets %}
     
     <script src="{{ asset('/js/libs/modernizr-1.6.min.js') }}"></script>
   </head>
@@ -34,7 +34,7 @@
       <div class="wrapper">
         <div id="logo">
         {% block logo %}
-          <a href="{{ path('homepage') }}">LandmarX</a>
+          <a href="{{ path('homepage') }}"><img src="{{ asset('LandmarX }}" alt="Landmarx" /></a>
         {% endblock %}  
         </div>
         <nav>
@@ -43,7 +43,7 @@
             <li><a href="{{ path('landmarks') }}">my landmarks</a></li>
             <li><a href="#">my collections</a></li>
             <li><a href="{{ path('categories') }}">landmarks by category</a></li>
-            <li><a href="{{ path('account_settings') }}">accoutn settings</a></li>
+            <li><a href="{{ path('account_settings') }}">account settings</a></li>
           </ul>
         {% endblock %}
         </nav>

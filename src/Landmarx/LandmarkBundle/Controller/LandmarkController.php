@@ -32,4 +32,28 @@
           'pager'     =>  $pager
       ));
     }
+    
+    public function newAction() {
+      $landmark = new Landmark();
+      $form = $this->createForm(new LandmarkType(), $landmark);
+      return $this->render('LandmarxLandmarkBundle:Landmark:new.html.twig', array(
+          'form' => $form->createView()));
+    }
+
+    public function showAction($slug) {
+      $repo = $this->getDoctrine()->getRepository('LandmarxLandmarkBundle:Landmark');
+      $query = $repo->createQueryBuilder('l')->where('l.slug = :slug')->setParameter('slug', $slug);
+      $landmark = $query->getSingleResult();
+      if($landmark)
+        return $this->render('LandmarxLandmarkBundle:Landmark:show.html.twig', array('landmark' => $landmark));
+      throw $this->createNotFoundException('No landmark found.');
+    }
+
+    public function createAction() {
+      $landmark = new Landmark();
+      $em = $this->getDoctrine()->getEntityManager();
+      $em->persist($landmark);
+      $em->flush();
+      return forward('LandmarxLandmarkBundle:Landmark:show', array('slug', $landmark->getSlug()));
+    }
 }
