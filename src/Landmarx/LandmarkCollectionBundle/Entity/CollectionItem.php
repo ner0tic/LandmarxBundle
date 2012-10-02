@@ -9,7 +9,7 @@
    * @ORM\Entity(repositoryClass="Landmarx\LandmarkCollectionBundle\Repository\CollectionItemRepository")
    * @ORM\Table(name="collection_item")
    */
-  class LandmarkCollection {
+  class CollectionItem {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")

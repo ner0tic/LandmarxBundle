@@ -21,9 +21,4 @@ $trailheads[0]->setLatLng(45.904356, -68.921275);
 $leanToCat = new LandmarkCategory('lean-to', 'campsite'); // __constructor($name, $parent = null, $description = null)
 $wilsonLeanto = new $leanToCat('wilson', $trail);
 $wilsonLeanto->setLatLng(array(45.39873, -69.45921)); // can accept arrays as well
-
-
-
-
-
 ```

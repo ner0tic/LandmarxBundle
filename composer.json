@@ -46,7 +46,10 @@
         
         "hwi/oauth-bundle":                                       "dev-master",
         
-        "ner0tic/jquery-plus-bundle":                             "*"
+        "ner0tic/jquery-plus-bundle":                             "*",
+
+        "knplabs/knp-menu":                                       "*",
+        "knplabs/knp-menu-bundle":                                "*",
     },
 
     "autoload": {
