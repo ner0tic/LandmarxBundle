@@ -17,7 +17,7 @@
     protected $id;
     
     /**
-     * @ORM\Column(type=text)
+     * @ORM\Column(type="text")
      */
     protected $value;
     
