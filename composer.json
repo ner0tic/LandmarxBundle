@@ -49,7 +49,7 @@
         "ner0tic/jquery-plus-bundle":                             "*",
 
         "knplabs/knp-menu":                                       "*",
-        "knplabs/knp-menu-bundle":                                "*",
+        "knplabs/knp-menu-bundle":                                "*"
     },
 
     "autoload": {

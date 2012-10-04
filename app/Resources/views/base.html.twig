@@ -22,45 +22,13 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
 <!-- CSS : implied media="all" -->
-    {% stylesheets '@LandmarxUserBundle/Resources/public/css/base/*' %}
+    {% stylesheets 
+        '@LandmarxUserBundle/Resources/public/css/base/reset.css' 
+        '@LandmarxUserBundle/Resources/public/css/base/landmarx.css' %}
       <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
-    
-    <script src="{{ asset('/js/libs/modernizr-1.6.min.js') }}"></script>
-  </head>
-  <body>
-    <header>
-    {% block header %}
-      <div class="wrapper">
-        <div id="logo">
-        {% block logo %}
-          <a href="{{ path('homepage') }}"><img src="{{ asset('bundles/landmarxlandmark/images/logo.png') }}" alt="Landmarx" /></a>
-        {% endblock %}  
-        </div>
-        <nav>
-        {% block nav %}
-          <ul>
-            <li><a href="{{ path('landmarks') }}">my landmarks</a></li>
-            <li><a href="#">my collections</a></li>
-            <li><a href="{{ path('categories') }}">landmarks by category</a></li>
-            <li><a href="{{ path('account_settings') }}">account settings</a></li>
-          </ul>
-        {% endblock %}
-        </nav>
-      </div>
-    {% endblock %}
-    </header>
-    <section id="content" class="wrapper">
-    {% block content %}{% endblock %}
-    </section>
-    <footer>
-    {% block footer %}      
-      &copy; 2012 all rights reserved.
-    {% endblock %}
-    </footer>
     {% javascripts '@LandmarxUserBundle/Resources/public/js/base/*' %}
-      <script type="text/javascript" src="{{ asset('bundles/manymulesjquery/js/jquery.min.js') }}"></script>
-      <script type="text/javascript" href="{{ asset_url }}" />
+      
       <script>
         function goLogIn(){
           window.location.href = "{{ path('_security_check') }}";
@@ -77,6 +45,32 @@
           }
         }
       </script>
-    {% endjavascripts %}      
+    {% endjavascripts %}     
+  </head>
+  <body>
+    <header>
+    {% block header %}
+      <div class="wrapper">
+        <div id="logo">
+        {% block logo %}
+          <a href="{{ path('homepage') }}"><img src="{{ asset('bundles/landmarxlandmark/images/logo.png') }}" alt="Landmarx" /></a>
+        {% endblock %}  
+        </div>
+        <nav>
+        {% block nav %}
+          {{ knp_menu_render('main') }}
+        {% endblock %}
+        </nav>
+      </div>
+    {% endblock %}
+    </header>
+    <section id="content" class="wrapper">
+    {% block content %}{% endblock %}
+    </section>
+    <footer>
+    {% block footer %}      
+      &copy; 2012 all rights reserved.
+    {% endblock %}
+    </footer>     
   </body>
 </html>
