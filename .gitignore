@@ -20,3 +20,6 @@ composer.lock
 *~
 =======
 /nbproject/
+/Resources/config/menu.xml
+/Resources/config/templating.xml
+/Resources/config/twig.xml

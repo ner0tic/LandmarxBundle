@@ -1,61 +1,35 @@
 {
-    "require": {
-        "php":                                                    ">=5.3.2",
-        "doctrine/doctrine-bundle":                               "dev-master",
-        "symfony/symfony":                                        "2.1.*",
-        "doctrine/dbal":                                          "2.2.2.0",
-        "doctrine/orm":                                           ">=2.2.3,<2.4-dev",
-        "twig/extensions":                                        "dev-master",
-
-        "symfony/assetic-bundle":                                 "2.1.*",
-        
-        "sensio/generator-bundle":                                "2.1.*",
-        "symfony/translation":                                    "*",
-        "symfony/framework-bundle":                               "2.1.*",
-        "sensio/distribution-bundle":                             "v2.1.1",
-        
-        "jms/aop-bundle":                                         "1.0.0.0",
-        "jms/security-extra-bundle":                              "1.2.0",
-        "jms/di-extra-bundle":                                    "1.1.*",
-        
-        "symfony/security-bundle":                                "2.1.*",
-        "symfony/swiftmailer-bundle":                             "2.1.*",
-        "symfony/monolog-bundle":                                 "2.1.*",
-
-        "sensio/framework-extra-bundle":                          "2.1.*",
-
-        "doctrine/data-fixtures":                                 "dev-master",
-        "doctrine/doctrine-fixtures-bundle":                      "dev-master",
-        "gedmo/doctrine-extensions":                              "2.3.x-dev",
-        "stof/doctrine-extensions-bundle":                        "dev-master",
-
-        "friendsofsymfony/user-bundle":                           "dev-master",
-        "friendsofsymfony/facebook-bundle":                       "dev-master",
-        "facebook/php-sdk":                                       "dev-master",
-
-        "kriswallsmith/buzz":                                     "v0.7",
-        
-        "willdurand/geocoder":                                    ">=1.0.0",
-        "egeloen/google-map-bundle":                              "1.0",
-        "oh/google-map-form-type-bundle":                         "dev-master",
-        
-        "white-october/pagerfanta-bundle":                        "dev-master",
-        "pagerfanta/pagerfanta":                                  "dev-master",
-                
-        "elao/web-profiler-extra-bundle":                         "dev-master",
-        
-        "hwi/oauth-bundle":                                       "dev-master",
-        
-        "ner0tic/jquery-plus-bundle":                             "*",
-
-        "knplabs/knp-menu":                                       "*",
-        "knplabs/knp-menu-bundle":                                "*"
-    },
-
-    "autoload": {
-        "psr-0": {
-            "Acme": "src/",
-            "Landmarx": "src/"
+    "name":         "ner0tic/landmarx-bundle",
+    "description":  "This bundle provides an integration of the Landmarx Mapping library",
+    "keywords":     ["mapping"],
+    "type":         "symfony-bundle",
+    "license":      "MIT",
+    "authors":      [
+        {
+            "name":     "David Durost ",
+            "homepage": "http://daviddurost.net"
+        },
+        {
+            "name":     "Christophe Coevoet",
+            "email":    "stof@notk.org"
+        },
+        {
+            "name":     "Symfony Community",
+            "homepage": "https://github.com/KnpLabs/KnpMenuBundle/contributors"
         }
+    ],
+    "require":      {
+        "landmarx/landmarx":         "1.0.*",
+        "symfony/framework-bundle": ">=2.0,<2.3-dev"
+    },
+    "autoload":     {
+        "psr-0": { "LandmarxBundle": "" }
+    },
+    "target-dir": "Landmarx/Bundle/LandmarxBundle",
+    "extra": {
+    "branch-alias": {
+        "dev-master": "1.0.x-dev"
     }
+    },
+    "minimum-stability": "dev"
 }
