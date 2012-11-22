@@ -19,7 +19,7 @@
         }
     ],
     "require":      {
-        "landmarx/landmarx":         "1.0.*",
+        "ner0tic/landmarx":         "1.0.*",
         "symfony/framework-bundle": ">=2.0,<2.3-dev"
     },
     "autoload":     {
