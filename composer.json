@@ -19,17 +19,12 @@
         }
     ],
     "require":      {
-        "ner0tic/landmarx":         "1.0.*",
+        "ner0tic/landmarx":         "dev-master",
         "symfony/framework-bundle": ">=2.0,<2.3-dev"
     },
     "autoload":     {
         "psr-0": { "LandmarxBundle": "" }
     },
     "target-dir": "Landmarx/Bundle/LandmarxBundle",
-    "extra": {
-    "branch-alias": {
-        "dev-master": "1.0.x-dev"
-    }
-    },
     "minimum-stability": "dev"
 }
