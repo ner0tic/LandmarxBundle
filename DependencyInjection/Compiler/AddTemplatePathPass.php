@@ -5,7 +5,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 
 /**
- * This compiler pass adds the path for the KnpMenu template in the twig loader.
+ * This compiler pass adds the path for the Landmarx template in the twig loader.
  *
  * @author Christophe Coevoet <stof@notk.org>
  */

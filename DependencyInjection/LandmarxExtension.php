@@ -1,13 +1,13 @@
 <?php
 
-namespace Knp\Bundle\MenuBundle\DependencyInjection;
+namespace Landmarx\Bundle\LandmarxBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 
-class KnpMenuExtension extends Extension
+class KnpLandmarkExtension extends Extension
 {
     /**
      * Handles the landmarx_landmark configuration.

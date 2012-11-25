@@ -2,7 +2,7 @@
 
 namespace Landmarx\Bundle\LandmarxBundle\EventListener;
 
-use Knp\Menu\Matcher\Voter\VoterInterface;
+use Landmarx\Landmark\Matcher\Voter\VoterInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;

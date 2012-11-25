@@ -2,6 +2,8 @@
 
 namespace Landmarx\Bundle\LandmarxBundle\Provider;
 
+use \InvalidArgumentException as InvalidArgument;
+
 use Landmarx\Landmark\FactoryInterface;
 use Landmarx\Landmark\ItemInterface;
 use Landmarx\Landmark\Provider\LandmarkProviderInterface;
@@ -42,24 +44,24 @@ class BuilderAliasProvider implements LandmarkProviderInterface
      * @param string $name The alias name of the landmark
      * @param array $options
      * @return \Landmarx\Landmark\ItemInterface
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgument
      */
     public function get($name, array $options = array())
     {
         if (!$this->has($name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid pattern passed to AliasProvider - expected "bundle:class:method", got "%s".', $name));
+            throw new InvalidArgument(sprintf('Invalid pattern passed to AliasProvider - expected "bundle:class:method", got "%s".', $name));
         }
 
         list($bundleName, $className, $methodName) = explode(':', $name);
 
         $builder = $this->getBuilder($bundleName, $className);
         if (!method_exists($builder, $methodName)) {
-            throw new \InvalidArgumentException(sprintf('Method "%s" was not found on class "%s" when rendering the "%s" landmark.', $methodName, $className, $name));
+            throw new InvalidArgument(sprintf('Method "%s" was not found on class "%s" when rendering the "%s" landmark.', $methodName, $className, $name));
         }
 
         $landmark = $builder->$methodName($this->landmarkFactory, $options);
         if (!$landmark instanceof ItemInterface) {
-            throw new \InvalidArgumentException(sprintf('Method "%s" did not return an ItemInterface landmark object for landmark "%s"', $methodName, $name));
+            throw new InvalidArgument(sprintf('Method "%s" did not return an ItemInterface landmark object for landmark "%s"', $methodName, $name));
         }
 
         return $landmark;
@@ -86,7 +88,7 @@ class BuilderAliasProvider implements LandmarkProviderInterface
      *
      * @param string $bundleName
      * @param string $className The class name of the builder
-     * @throws \InvalidArgumentException If the class does not exist
+     * @throws InvalidArgument If the class does not exist
      */
     protected function getBuilder($bundleName, $className)
     {
@@ -110,10 +112,10 @@ class BuilderAliasProvider implements LandmarkProviderInterface
 
             if (null === $class) {
                 if (1 === count($logs)) {
-                    throw new \InvalidArgumentException($logs[0]);
+                    throw new InvalidArgument($logs[0]);
                 }
 
-                throw new \InvalidArgumentException(sprintf('Unable to find landmark builder "%s" in bundles %s.', $name, implode(', ', $bundles)));
+                throw new InvalidArgument(sprintf('Unable to find landmark builder "%s" in bundles %s.', $name, implode(', ', $bundles)));
             }
 
             $builder = new $class();

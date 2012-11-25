@@ -1,16 +1,16 @@
 <?php
 
-namespace Knp\Bundle\MenuBundle\Templating\Helper;
+namespace Landmarx\Bundle\LandmarxBundle\Templating\Helper;
 
 use Symfony\Component\Templating\Helper\Helper as TemplatingHelper;
-use Knp\Menu\Twig\Helper;
+use Landmarx\Landmark\Twig\Helper;
 
-class MenuHelper extends TemplatingHelper
+class LandmarkHelper extends TemplatingHelper
 {
     private $helper;
 
     /**
-     * @param \Knp\Menu\Twig\Helper $helper
+     * @param \Landmarx\Landmark\Twig\Helper $helper
      */
     public function __construct(Helper $helper)
     {
@@ -20,27 +20,27 @@ class MenuHelper extends TemplatingHelper
     /**
      * Retrieves an item following a path in the tree.
      *
-     * @param \Knp\Menu\ItemInterface|string $menu
+     * @param \Landmarx\Landmark\ItemInterface|string $landmark
      * @param array $path
      * @param array $options
-     * @return \Knp\Menu\ItemInterface
+     * @return \Landmarx\Landmark\ItemInterface
      */
-    public function get($menu, array $path = array(), array $options = array())
+    public function get($landmark, array $path = array(), array $options = array())
     {
-        return $this->helper->get($menu, $path, $options);
+        return $this->helper->get($landmark, $path, $options);
     }
 
     /**
-     * Renders a menu with the specified renderer.
+     * Renders a landmark with the specified renderer.
      *
-     * @param \Knp\Menu\ItemInterface|string|array $menu
+     * @param \Landmarx\Landmark\ItemInterface|string|array $landmark
      * @param array $options
      * @param string $renderer
      * @return string
      */
-    public function render($menu, array $options = array(), $renderer = null)
+    public function render($landmark, array $options = array(), $renderer = null)
     {
-        return $this->helper->render($menu, $options, $renderer);
+        return $this->helper->render($landmark, $options, $renderer);
     }
 
     /**
@@ -48,6 +48,6 @@ class MenuHelper extends TemplatingHelper
      */
     public function getName()
     {
-        return 'knp_menu';
+        return 'landmarx_landmark';
     }
 }

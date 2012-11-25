@@ -2,6 +2,8 @@
 
 namespace Landmarx\Bundle\LandmarxBundle\Renderer;
 
+use \InvalidArgumentException as InvlidArgument;
+
 use Landmarx\Landmark\Renderer\RendererProviderInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -25,7 +27,7 @@ class ContainerAwareProvider implements RendererProviderInterface
         }
 
         if (!isset($this->rendererIds[$name])) {
-            throw new \InvalidArgumentException(sprintf('The renderer "%s" is not defined.', $name));
+            throw new InvalidArgument(sprintf('The renderer "%s" is not defined.', $name));
         }
 
         return $this->container->get($this->rendererIds[$name]);

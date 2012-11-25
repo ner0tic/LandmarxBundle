@@ -1,6 +1,8 @@
 <?php
 namespace Landmarx\Bundle\LandmarxBundle\DependencyInjection\Compiler;
 
+use Landmarx\Landmark\Exception\MissingArgumentException as MissinArgument;
+
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 
@@ -22,7 +24,7 @@ class AddRenderersPass implements CompilerPassInterface
         foreach ($container->findTaggedServiceIds('landmarx_landmark.renderer') as $id => $tags) {
             foreach ($tags as $attributes) {
                 if (empty($attributes['alias'])) {
-                    throw new \InvalidArgumentException(sprintf('The alias is not defined in the "landmarx_landmark.renderer" tag for the service "%s"', $id));
+                    throw new MissingArgument(sprintf('The alias is not defined in the "landmarx_landmark.renderer" tag for the service "%s"', $id));
                 }
                 $renderers[$attributes['alias']] = $id;
             }

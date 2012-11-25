@@ -2,10 +2,12 @@
 
 namespace Landmarx\Bundle\LandmarxBundle\Provider;
 
-use Landmarx\Landmark\Provider\MenuProviderInterface;
+use \InvalidArgumentException as InvalidArgument;
+
+use Landmarx\Landmark\Provider\LandmarkProviderInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class ContainerAwareProvider implements MenuProviderInterface
+class ContainerAwareProvider implements LandmarkProviderInterface
 {
     private $container;
     private $landmarkIds;
@@ -19,7 +21,7 @@ class ContainerAwareProvider implements MenuProviderInterface
     public function get($name, array $options = array())
     {
         if (!isset($this->landmarkIds[$name])) {
-            throw new \InvalidArgumentException(sprintf('The landmark "%s" is not defined.', $name));
+            throw new InvalidArgument(sprintf('The landmark "%s" is not defined.', $name));
         }
 
         return $this->container->get($this->landmarkIds[$name]);
