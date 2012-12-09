@@ -1,11 +1,30 @@
 LandmarxBundle
 =============
 
+1. [Installation](LandmarxBundle/blob/master/README.md)
+2. [Usage](LandmarxBundle/blob/master/Resources/doc/usage.md)
+
+Installation
+------------
+Add to `composer.json`
+```php
+"require": {
+    "ner0tic/landmarx-bundle": "*",
+    // ...
+}
+```
+Register the bundle
+Add to `app/AppKernel.php`
+```php
+public function registerBundles()
+{
+    $bundles = array(
+        new Landmarx\Bundle\LandmarxBundle\LandmarxBundle(),
+        // ...
+    );
+}
+```
 
 ## Credits
 
-Based on KnpMenuBundle
-
-This bundle was originally ported from [ioMenuPlugin](http://github.com/weaverryan/ioMenuPlugin),
-a menu plugin for symfony1. It has since been developed by [knpLabs](http://www.knplabs.com) and
-the Symfony community.
+Based on [KnpMenu](https://github.com/KnpLabs/KnpMenu)
